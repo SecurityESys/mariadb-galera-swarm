@@ -74,7 +74,7 @@ case "$1" in
 		shift 1
 		gosu mysql mysqld --console \
 			--wsrep-on=OFF \
-			--default-time-zone="+00:00" \
+			--default-time-zone="+00:00" $EXTRAOPTS \
 			"$@" 2>&1
 		exit
 		;;
@@ -248,7 +248,7 @@ gosu mysql mysqld.sh --console \
 	--wsrep_cluster_address=gcomm://$GCOMM \
 	--wsrep_node_address=$NODE_ADDRESS:4567 \
 	--wsrep_sst_auth=xtrabackup:$XTRABACKUP_PASSWORD \
-	--default-time-zone=+00:00 \
+	--default-time-zone=+00:00 $EXTRAOPTS \
 	"$@" 2>&1 &
 wait $! || true
 RC=$?
