@@ -2,3 +2,7 @@
 max_connections		= 300
 innodb_log_file_size	= 2G
 innodb_buffer_pool_size	= 4G
+gtid_domain_id		= 42
+binlog_format		= ROW
+log_slave_updates	= 1
+log_bin			= binlog
